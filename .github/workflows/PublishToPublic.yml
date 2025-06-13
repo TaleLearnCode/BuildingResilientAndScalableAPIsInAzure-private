@@ -1,0 +1,109 @@
+name: PublishChangelog
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.2
+      - name: Paths Changes Filter
+        uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            changelog:
+              - 'CHANGELOG.md'
+            demos:
+              - 'Demos/**'
+            event_materials:
+              - 'EventMaterials/**'
+            git_ignore:
+              - '.gitignore'
+            license:
+              - 'LICENSCE.md'
+            readme:
+              - 'README.md'
+            thumbnail:
+              - 'thumbnail.jpg'
+      - name: Publish Change Log
+        if: steps.filter.outputs.changelog == 'true'
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+         API_TOKEN_GITHUB: ${{ secrets.COPYFILESTOKEN }}
+        with:
+         source_file: 'CHANGELOG.md'
+         destination_repo: ${{ vars.DestinationRepo }}
+         #destination_folder: ''
+         user_email: ${{ secrets.USEREMAIL }}
+         user_name: 'TaleLearnCode'
+      - name: Publish Demos
+        if: steps.filter.outputs.demos == 'true'
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+         API_TOKEN_GITHUB: ${{ secrets.COPYFILESTOKEN }}
+        with:
+         source_file: 'Demos'
+         destination_repo: ${{ vars.DestinationRepo }}
+         #destination_folder: ''
+         user_email: ${{ secrets.USEREMAIL }}
+         user_name: 'TaleLearnCode'
+      - name: Publish Event Materials
+        if: steps.filter.outputs.event_materials == 'true'
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+         API_TOKEN_GITHUB: ${{ secrets.COPYFILESTOKEN }}
+        with:
+         source_file: 'EventMaterials'
+         destination_repo: ${{ vars.DestinationRepo }}
+         #destination_folder: ''
+         user_email: ${{ secrets.USEREMAIL }}
+         user_name: 'TaleLearnCode'
+      - name: Publish Git Ignore
+        if: steps.filter.outputs.gitignore == 'true'
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+         API_TOKEN_GITHUB: ${{ secrets.COPYFILESTOKEN }}
+        with:
+         source_file: '.gitignore'
+         destination_repo: ${{ vars.DestinationRepo }}
+         #destination_folder: ''
+         user_email: ${{ secrets.USEREMAIL }}
+         user_name: 'TaleLearnCode'
+      - name: Publish License
+        if: steps.filter.outputs.license == 'true'
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+         API_TOKEN_GITHUB: ${{ secrets.COPYFILESTOKEN }}
+        with:
+         source_file: 'LICENSE.md'
+         destination_repo: ${{ vars.DestinationRepo }}
+         #destination_folder: ''
+         user_email: ${{ secrets.USEREMAIL }}
+         user_name: 'TaleLearnCode'
+      - name: Publish Readme
+        if: steps.filter.outputs.readme == 'true'
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+         API_TOKEN_GITHUB: ${{ secrets.COPYFILESTOKEN }}
+        with:
+         source_file: 'README.md'
+         destination_repo: ${{ vars.DestinationRepo }}
+         #destination_folder: ''
+         user_email: ${{ secrets.USEREMAIL }}
+         user_name: 'TaleLearnCode'
+      - name: Publish Thumbnail
+        if: steps.filter.outputs.thumbnail == 'true'
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+         API_TOKEN_GITHUB: ${{ secrets.COPYFILESTOKEN }}
+        with:
+         source_file: 'thumbnail.jpg'
+         destination_repo: ${{ vars.DestinationRepo }}
+         #destination_folder: ''
+         user_email: ${{ secrets.USEREMAIL }}
+         user_name: 'TaleLearnCode'
