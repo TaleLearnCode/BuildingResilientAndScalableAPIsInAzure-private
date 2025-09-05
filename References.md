@@ -1,0 +1,1 @@
+[The Total Economic Impact™ Of Microsoft Azure API Management](https://tei.forrester.com/go/Microsoft/AzureAPIManagement/?lang=en-us)

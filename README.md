@@ -28,8 +28,8 @@ Whether you’re a developer, architect, or IT professional, this session provid
 
 | Event | Location | Date | Time | Room | Downloads |
 |-------|:--------:|-----:|-----:|-----:|----------:|
-| [API Conference New York 2025](https://apiconference.net/new-york/)  (1) | New York, NY | September 29 - October 2, 2025 | TBA | TBA | Available Afterwards |
-| [API Conference Berlin 2025](https://apiconference.net/berlin/) (2) | Berlin, Germany | October 20 - 22, 2025 | TBA | TBA | Available Afterwards |
+| [API Conference New York 2025](https://apiconference.net/new-york/)  (1) | New York, NY | September 29 - October 2, 2025 | 16:00 EDT | TBA | Available Afterwards |
+| [API Conference Berlin 2025](https://apiconference.net/berlin/) (2) | Berlin, Germany | October 21, 2025 | 15:45 CET | TBA | Available Afterwards |
 
 (1) Listed as Scaling APIs Like a City That Never Sleeps: Building Resilient APIs in Azure  
 (2) Listed as Scaling APIs Like the Heart of Berlin: Building Resilient APIs in Azure
