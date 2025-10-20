@@ -34,8 +34,4 @@ Whether you’re a developer, architect, or IT professional, this session provid
 (1) Listed as Scaling APIs Like a City That Never Sleeps: Building Resilient APIs in Azure  
 (2) Listed as Scaling APIs Like the Heart of Berlin: Building Resilient APIs in Azure
 
-## Resources
-
-There are no additional resources for this presentation.
-
 Email [chadgreen@chadgreen.com](mailto:chadgreen@chadgreen.com?subject=Presentation%20Request:%20Presentation%20Title) to have Chad present this session at your event.
