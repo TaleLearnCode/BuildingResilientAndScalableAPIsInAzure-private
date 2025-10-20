@@ -16,8 +16,6 @@ jobs:
         id: filter
         with:
           filters: |
-            changelog:
-              - 'CHANGELOG.md'
             demos:
               - 'Demos/**'
             event_materials:
@@ -30,17 +28,6 @@ jobs:
               - 'README.md'
             thumbnail:
               - 'thumbnail.jpg'
-      - name: Publish Change Log
-        if: steps.filter.outputs.changelog == 'true'
-        uses: dmnemec/copy_file_to_another_repo_action@main
-        env:
-         API_TOKEN_GITHUB: ${{ secrets.COPYFILESTOKEN }}
-        with:
-         source_file: 'CHANGELOG.md'
-         destination_repo: ${{ vars.DestinationRepo }}
-         #destination_folder: ''
-         user_email: ${{ secrets.USEREMAIL }}
-         user_name: 'TaleLearnCode'
       - name: Publish Demos
         if: steps.filter.outputs.demos == 'true'
         uses: dmnemec/copy_file_to_another_repo_action@main
